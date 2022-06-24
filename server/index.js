@@ -34,7 +34,7 @@ app.get('/', (req, res) => {
 
 app.use("/api/auth", authRoutes);
 app.use("/api/users", userRoutes);
-app.use("/api/vidoes", videoRoutes);
+app.use("/api/videos", videoRoutes);
 app.use("/api/comments", commentRoutes);
 
 

@@ -91,11 +91,11 @@ export const sub = async (req, res, next) => {
     const subscribedChannels = user.subscribedUsers;
 
     const list = Promise.all(
-      subscribedChannels.map(channelId =>{
+      subscribedChannels.map(channelId => {
         return Video.find({ userId: channelId });
       })
     );
-      res.status(200).json({list: list})
+    res.status(200).json({ list: list })
   } catch (error) {
     next(error)
   }
