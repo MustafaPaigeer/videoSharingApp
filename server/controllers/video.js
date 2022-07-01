@@ -59,9 +59,9 @@ export const getVideo = async (req, res, next) => {
 export const addView = async (req, res, next) => {
   try {
     await Video.findByIdAndUpdate(req.params.id, {
-      $inc: {views:1}
+      $inc: { views: 1 }
     })
-    res.status(200).json({msg: "The view has been increased."})
+    res.status(200).json({ msg: "The view has been increased." })
   } catch (error) {
     next(error)
   }
@@ -70,7 +70,7 @@ export const addView = async (req, res, next) => {
 export const trend = async (req, res, next) => {
   try {
 
-    
+
   } catch (error) {
     next(error)
   }
@@ -78,8 +78,8 @@ export const trend = async (req, res, next) => {
 
 export const random = async (req, res, next) => {
   try {
-
-    
+    const video = await Video.aggregate([{ $sample: { size: 40 } }])
+    res.status(200).json({ video: video })
   } catch (error) {
     next(error)
   }
@@ -88,7 +88,7 @@ export const random = async (req, res, next) => {
 export const sub = async (req, res, next) => {
   try {
 
-    
+
   } catch (error) {
     next(error)
   }
