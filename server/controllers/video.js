@@ -23,7 +23,9 @@ export const updateVideo = async (req, res, next) => {
         new: true
       }
       );
-      res.status(200).json({video: updateVideo})
+      res.status(200).json({ video: updateVideo })
+    } else {
+      return next(createError(403, "you can only update your video"))
     }
   } catch (error) {
     next(error)
@@ -32,7 +34,14 @@ export const updateVideo = async (req, res, next) => {
 
 export const deleteVideo = async (req, res, next) => {
   try {
-
+    const video = await Video.findById(req.params.id)
+    if (!video) return next(createError(404, "video not found"))
+    if (req.user.id === video.userId) {
+      await Video.findByIdAndDelete(req.params.id);
+      res.status(200).json({ message: "The video has been deleted" })
+    } else {
+      return next(createError(403, "You can only update your video"))
+    }
   } catch (error) {
     next(error)
   }
