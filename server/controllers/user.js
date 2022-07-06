@@ -34,20 +34,41 @@ export const deleteUser = async (req, res, next) => {
 }
 
 export const getUser = async (req, res, next) => {
-
+  try {
+    const user = await User.findById(req.params.id)
+    res.status(200).json({user: user})
+  } catch (error) {
+    next(error)
+  }
 }
 
 export const subscribe = async (req, res, next) => {
-
+  try {
+     
+  } catch (error) {
+    next(error)
+  }
 }
 export const unsubscribe = async (req, res, next) => {
+  try {
 
+  } catch (error) {
+    next(error)
+  }
 }
 
 export const like = async (req, res, next) => {
+  try {
 
+  } catch (error) {
+    next(error)
+  }
 }
 
 export const dislike = async (req, res, next) => {
+  try {
 
+  } catch (error) {
+    next(error)
+  }
 }
