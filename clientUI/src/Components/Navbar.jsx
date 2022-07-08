@@ -56,8 +56,21 @@ const Button = styled.button`
 
 const Navbar = () => {
   return (
-    <div>Navbar</div>
-  )
-}
+    <Container>
+      <Wrapper>
+        <Search>
+          <Input placeholder="Search" />
+          <SearchOutlinedIcon />
+        </Search>
+        <Link to="signin" style={{ textDecoration: "none" }}>
+          <Button>
+            <AccountCircleOutlinedIcon />
+            SIGN IN
+          </Button>
+        </Link>
+      </Wrapper>
+    </Container>
+  );
+};
 
-export default Navbar
+export default Navbar;
