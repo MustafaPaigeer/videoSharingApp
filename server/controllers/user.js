@@ -1,6 +1,11 @@
+import { createError } from "../error"
 
 export const update = (req, res, next) => {
-
+  if(req.params.id === req.user.id) {
+    // update
+  } else {
+    return next(createError(403, "You can update only your account!"))
+  }
 }
 export const deleteUser = (req, res, next) => {
 
