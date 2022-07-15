@@ -25,12 +25,12 @@ export const signin = async (req, res, next) => {
     if(!isCorrect) return next(createError(400, "Worng credentials!"))
 
     const token = jwt.sign({id: user._id}, process.env.JWT)
-
+    const {password, ...other} = user._doc
     res.cookie("access_token", token, {
       httpOnly:true
-    }).status(200).json(user)
+    }).status(200).json(others)
 
-    
+
   } catch (err) {
     next(err)
   }
