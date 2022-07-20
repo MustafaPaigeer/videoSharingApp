@@ -6,7 +6,7 @@ export const addVideo = async (req, res, next) => {
   const newVideo = new Video({ userId: req.user.id, ...req.body });
   try {
     const savedVideo = await newVideo.save()
-    res.status(200).json({ video: savedVideo })
+    res.status(200).json(savedVideo)
   } catch (error) {
     next(error)
   }
@@ -23,7 +23,7 @@ export const updateVideo = async (req, res, next) => {
         new: true
       }
       );
-      res.status(200).json({ video: updateVideo })
+      res.status(200).json(updateVideo)
     } else {
       return next(createError(403, "you can only update your video"))
     }
@@ -61,7 +61,7 @@ export const addView = async (req, res, next) => {
     await Video.findByIdAndUpdate(req.params.id, {
       $inc: { views: 1 }
     })
-    res.status(200).json({ msg: "The view has been increased." })
+    res.status(200).json("The view has been increased.")
   } catch (error) {
     next(error)
   }

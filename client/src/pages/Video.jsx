@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import ThumbUpOutlinedIcon from "@mui/icons-material/ThumbUpOutlined";
 import ThumbDownOffAltOutlinedIcon from "@mui/icons-material/ThumbDownOffAltOutlined";
@@ -10,7 +10,6 @@ import Comments from "../components/Comments";
 import Card from "../components/Card";
 import { useDispatch, useSelector } from "react-redux";
 import { useLocation } from "react-router-dom";
-import { useState, useEffect } from "react";
 import axios from 'axios';
 import { fetchSuccess, like, dislike } from "../redux/videoSlice";
 import { format } from "timeago.js";
@@ -130,11 +129,13 @@ const Video = () => {
     const fetchData = async () => {
       try {
         const videoRes = await axios.get(`/videos/find/${path}`);
+        
         const channelRes = await axios.get(
           `/users/find/${videoRes.data.userId}`
         );
         setChannel(channelRes.data);
         dispatch(fetchSuccess(videoRes.data));
+        console.log('video Res data', videoRes.data)
       } catch (err) { }
     };
     fetchData();
