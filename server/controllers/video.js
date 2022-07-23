@@ -10,7 +10,7 @@ export const addVideo = async (req, res, next) => {
   } catch (error) {
     next(error)
   }
-}
+};
 
 export const updateVideo = async (req, res, next) => {
   try {
@@ -30,7 +30,7 @@ export const updateVideo = async (req, res, next) => {
   } catch (error) {
     next(error)
   }
-}
+};
 
 export const deleteVideo = async (req, res, next) => {
   try {
@@ -45,7 +45,7 @@ export const deleteVideo = async (req, res, next) => {
   } catch (error) {
     next(error)
   }
-}
+};
 
 export const getVideo = async (req, res, next) => {
   try {
@@ -54,7 +54,7 @@ export const getVideo = async (req, res, next) => {
   } catch (error) {
     next(error)
   }
-}
+};
 
 export const addView = async (req, res, next) => {
   try {
@@ -65,7 +65,7 @@ export const addView = async (req, res, next) => {
   } catch (error) {
     next(error)
   }
-}
+};
 
 export const trend = async (req, res, next) => {
   try {
@@ -74,16 +74,16 @@ export const trend = async (req, res, next) => {
   } catch (error) {
     next(error)
   }
-}
+};
 
 export const random = async (req, res, next) => {
   try {
-    const video = await Video.aggregate([{ $sample: { size: 40 } }])
-    res.status(200).json({ video: video })
+    const videos = await Video.aggregate([{ $sample: { size: 40 } }])
+    res.status(200).json({ video: videos })
   } catch (error) {
     next(error)
   }
-}
+};
 
 export const sub = async (req, res, next) => {
   try {
@@ -99,4 +99,26 @@ export const sub = async (req, res, next) => {
   } catch (error) {
     next(error)
   }
-}
+};
+
+export const getByTag = async (req, res, next) => {
+  const tags = req.query.tags.split(",");
+  try {
+    const videos = await Video.find({ tags: { $in: tags } }).limit(20);
+    res.status(200).json(videos);
+  } catch (err) {
+    next(err);
+  }
+};
+
+export const search = async (req, res, next) => {
+  const query = req.query.q;
+  try {
+    const videos = await Video.find({
+      title: { $regex: query, $options: "i" },
+    }).limit(40);
+    res.status(200).json(videos);
+  } catch (err) {
+    next(err);
+  }
+};
