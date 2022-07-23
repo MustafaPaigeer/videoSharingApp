@@ -90,12 +90,12 @@ export const sub = async (req, res, next) => {
     const user = await User.findById(req.user.id)
     const subscribedChannels = user.subscribedUsers;
 
-    const list = Promise.all(
+    const list = await Promise.all(
       subscribedChannels.map(channelId => {
         return Video.find({ userId: channelId });
       })
     );
-    res.status(200).json({ list: list })
+    res.status(200).json({ list: list.flat().sort((a, b) => b.createdAt - a.createdAt )});
   } catch (error) {
     next(error)
   }
