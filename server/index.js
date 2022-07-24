@@ -12,13 +12,13 @@ dotenv.config();
 
 const connect = () => {
   mongoose
-  .connect(process.env.MONGO_URI)
-  .then(()=> {
-    console.log("connected to DB");
-  })
-  .catch ((error) => {
-    throw error;
-  });
+    .connect(process.env.MONGO_URI)
+    .then(() => {
+      console.log("connected to DB");
+    })
+    .catch((error) => {
+      throw error;
+    });
 };
 
 //middlewares
@@ -31,12 +31,10 @@ app.get('/', (req, res) => {
   res.send('hello world')
 })
 
-
 app.use("/api/auth", authRoutes);
 app.use("/api/users", userRoutes);
 app.use("/api/videos", videoRoutes);
 app.use("/api/comments", commentRoutes);
-
 
 //error handler
 app.use((err, req, res, next) => {
