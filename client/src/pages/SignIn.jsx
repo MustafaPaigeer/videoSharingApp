@@ -3,6 +3,8 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { useDispatch } from "react-redux";
 import { loginFailure, loginStart, loginSuccess } from "../redux/userSlice";
+import { auth, provider } from "../firebase";
+import { signInWithPopup } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 
 const Container = styled.div`
@@ -94,7 +96,9 @@ const SignIn = () => {
         <SubTitle>to continue to LamaTube</SubTitle>
         <Input placeholder="username" onChange={e => setName(e.target.value)} />
         <Input type="password" placeholder="password" onChange={e => setPassword(e.target.value)} />
-        <Button>Sign in</Button>
+        <Button onClick={handleLogin}>Sign in</Button>
+        <Title>or</Title>
+        <Button onClick={signInWithGoogle}>Signin with Google</Button>
         <Title>or</Title>
         <Input placeholder="username" onChange={e => setName(e.target.value)} />
         <Input placeholder="email" onChange={e => setEmail(e.target.value)} />
