@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState }  from 'react';
 import styled, { ThemeProvider } from "styled-components";
 import Menu from './Components/Menu';
 import Navbar from './Components/Navbar';
@@ -30,8 +30,6 @@ function App() {
         </Wrapper>
       </Main>
     </Menu>
-
-
 
 </Container>
 </ThemeProvider>
