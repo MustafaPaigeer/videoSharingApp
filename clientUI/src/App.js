@@ -8,7 +8,7 @@ display: flex;
 
 `;
 const Main = styled.div`
-
+  flex: 7;
 `;
 const Wrapper = styled.div`
 
@@ -21,7 +21,7 @@ function App() {
       <Main>
         <Navbar />
         <Wrapper>
-          Video Arts
+          Video cards
         </Wrapper>
       </Main>
     </Menu>
