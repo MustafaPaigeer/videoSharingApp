@@ -3,6 +3,10 @@ import styled, { ThemeProvider } from "styled-components";
 import Menu from './Components/Menu';
 import Navbar from './Components/Navbar';
 import { darkTheme, lightTheme } from "./utils/Theme";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
+import Video from "./pages/Video";
+import SignIn from "./pages/SignIn";
 
 const Container = styled.div`
 display: flex;
