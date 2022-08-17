@@ -6,6 +6,9 @@ import ReplyOutlinedIcon from "@mui/icons-material/ReplyOutlined";
 import AddTaskOutlinedIcon from "@mui/icons-material/AddTaskOutlined";
 import Comments from "../components/Comments";
 import Card from "../components/Card";
+import { useDispatch, useSelector } from "react-redux";
+import { useLocation } from "react-router-dom";
+import { useState, useEffect } from "react";
 
 const Container = styled.div`
   display: flex;
@@ -105,6 +108,22 @@ const Subscribe = styled.button`
 `;
 
 const Video = () => {
+  const { currentUser } = useSelector((state) => state.user);
+  const dispatch = useDispatch();
+
+  const path = useLocation().pathname.split("/")[2];
+
+  const [video, setVideo] = useState({})
+  const [channel, setChannel] = useState({})
+
+  useEffect(() => {
+    try{
+
+    }catch(error){
+
+    }
+  });
+
   return (
     <Container>
       <Content>
@@ -158,6 +177,7 @@ const Video = () => {
         <Comments/>
       </Content>
       <Recommendation>
+        {/* <Card type="sm"/>
         <Card type="sm"/>
         <Card type="sm"/>
         <Card type="sm"/>
@@ -169,8 +189,7 @@ const Video = () => {
         <Card type="sm"/>
         <Card type="sm"/>
         <Card type="sm"/>
-        <Card type="sm"/>
-        <Card type="sm"/>
+        <Card type="sm"/> */}
       </Recommendation>
     </Container>
   );
