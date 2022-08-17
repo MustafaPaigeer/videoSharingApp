@@ -5,7 +5,7 @@ import { getAuth, GoogleAuthProvider } from "firebase/auth";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: process.env.FIREBASE_KEY,//"AIzaSyAuNwFQwN90pj8oH8NJs4oSp4iKxDLrHEM",
+  apiKey: "AIzaSyAuNwFQwN90pj8oH8NJs4oSp4iKxDLrHEM",
   authDomain: "video-9fb21.firebaseapp.com",
   projectId: "video-9fb21",
   storageBucket: "video-9fb21.appspot.com",
