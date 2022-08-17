@@ -24,12 +24,12 @@ export const videoSlice = createSlice({
     },
     logout: (state) => {
       state.currentUser = null;
-        state.loading = false;
-        state.error = false;
+      state.loading = false;
+      state.error = false;
     }
   },
 });
 
-export const { loginStart, loginSuccess, loginFailure, logout} = videoSlice.actions
+export const { loginStart, loginSuccess, loginFailure, logout } = videoSlice.actions
 
 export default videoSlice.reducer;
