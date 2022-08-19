@@ -162,7 +162,7 @@ const Video = () => {
       <Content>
         <VideoWrapper>
           <VideoFrame src={currentVideo.videoUrl} controls />
-          {console.log('current video ...',currentVideo)}
+          {console.log('current video ...', currentVideo)}
         </VideoWrapper>
         <Title>{currentVideo.title}</Title>
         <Details>
