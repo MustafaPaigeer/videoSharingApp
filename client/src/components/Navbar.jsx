@@ -72,7 +72,7 @@ const Avatar = styled.img`
 `;
 
 const Navbar = () => {
-  const { currentUser } = useSelector(state => state.user)
+  const { currentUser } = useSelector(state => state.user);
   return (
     <Container>
       <Wrapper>
@@ -82,17 +82,17 @@ const Navbar = () => {
         </Search>
         {currentUser ? (
           <User>
-            <VideoCallOutlinedIcon/>
+            <VideoCallOutlinedIcon />
             <Avatar />
             {currentUser.name}
           </User>
-          ): (
+        ) : (
           <Link to="signin" style={{ textDecoration: "none" }}>
-          <Button>
-            <AccountCircleOutlinedIcon />
-            SIGN IN
-          </Button>
-        </Link>)}
+            <Button>
+              <AccountCircleOutlinedIcon />
+              SIGN IN
+            </Button>
+          </Link>)}
       </Wrapper>
     </Container>
   );
