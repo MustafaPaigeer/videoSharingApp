@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined";
 import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
+import VideoCallOutlinedIcon from "@mui/icons-material/VideoCallOutlined";
 import { Link } from "react-router-dom";
 import { useSelector } from 'react-redux';
 
@@ -61,7 +62,15 @@ const User = styled.div`
   gap: 10px;
   font-weight: 500;
   color: color: ${({ theme }) => theme.text};
-`
+`;
+
+const Avatar = styled.img`
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: #999;
+`;
+
 const Navbar = () => {
   const { currentUser } = useSelector(state => state.user)
   return (
@@ -73,7 +82,7 @@ const Navbar = () => {
         </Search>
         {currentUser ? (
           <User>
-            <VideoCallOutLinedIcon/>
+            <VideoCallOutlinedIcon/>
             <Avatar />
             {currentUser.name}
           </User>
