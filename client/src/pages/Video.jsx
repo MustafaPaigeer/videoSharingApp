@@ -14,7 +14,7 @@ import axios from "axios";
 import { dislike, fetchSuccess, like } from "../redux/videoSlice";
 import { format } from "timeago.js";
 import { subscription } from "../redux/userSlice";
-import Recommendation from "../components/Recommendation";
+//import Recommendation from "../components/Recommendation";
 
 const Container = styled.div`
   display: flex;
@@ -162,6 +162,7 @@ const Video = () => {
       <Content>
         <VideoWrapper>
           <VideoFrame src={currentVideo.videoUrl} controls />
+          {console.log('current video ...',currentVideo)}
         </VideoWrapper>
         <Title>{currentVideo.title}</Title>
         <Details>
@@ -212,7 +213,7 @@ const Video = () => {
         <Hr />
         <Comments videoId={currentVideo._id} />
       </Content>
-      <Recommendation tags={currentVideo.tags} />
+      {/* <Recommendation tags={currentVideo.tags} /> */}
     </Container>
   );
 };
