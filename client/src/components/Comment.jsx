@@ -39,6 +39,8 @@ const Text = styled.span`
 const Comment = ({ comment }) => {
   const [channel, setChannel] = useState({});
 
+  // Display all comments for a video
+  
   useEffect(() => {
     const fetchComment = async () => {
       const res = await axios.get(`/users/find/${comment.userId}`);
