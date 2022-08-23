@@ -63,9 +63,8 @@ const User = styled.div`
   align-items: center;
   gap: 10px;
   font-weight: 500;
-  color: white;
+  color: ${({ theme }) => theme.text};
 `;
-//color: ${({ theme }) => theme.text};
 
 const Avatar = styled.img`
   width: 32px;
