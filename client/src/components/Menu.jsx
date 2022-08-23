@@ -133,7 +133,7 @@ const Menu = ({ darkMode, setDarkMode }) => {
           </Link>
         </Login>
           <Hr /></>}
-        <Title>BEST OF MPVidoes</Title>
+        <Title>BEST OF MP</Title>
         <Item>
           <LibraryMusicOutlinedIcon />
           Music
