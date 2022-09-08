@@ -18,8 +18,8 @@ React and Redux toolkit is used at the frontEnd and MongoDB, Firbase Storage and
 **Video**: Watch video.
 !["Video Page"](https://github.com/MustafaPaigeer/videoSharingApp/blob/master/client/public/screenshots/2.png)
 
-- **Search**: (Search Video.
-  !["Search Video"]https://github.com/MustafaPaigeer/videoSharingApp/blob/master/client/public/screenshots/3.png)
+- **Search**: Search Video.
+  !["Search Video"](https://github.com/MustafaPaigeer/videoSharingApp/blob/master/client/public/screenshots/3.png)
 
 - **Upload Video**: Upload a video
   !["upload a video"](https://github.com/MustafaPaigeer/videoSharingApp/blob/master/client/public/screenshots/4.png)
