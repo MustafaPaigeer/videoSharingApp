@@ -13,7 +13,7 @@ React and Redux toolkit is used at the frontEnd and MongoDB, Firbase Storage and
 - Search Videos
 - Dark Mode and Light Mode
 
-!["Home Page"]()
+!["Home Page"](https://github.com/MustafaPaigeer/videoSharingApp/blob/master/client/public/screenshots/1.png)
 
 **Video**: Watch video.
 !["Video Page"]()
